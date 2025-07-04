@@ -1,0 +1,7 @@
+thisset = {"apple","banana",'cherry'}
+thisset.add("orange")# This works like append or insert in list tuple 
+print(thisset)
+
+tropical = {"pineapple", "mango", "papaya"}
+thisset.update(tropical)# Works like extend() method in list
+print(thisset)
