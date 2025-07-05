@@ -1,1 +1,8 @@
 https://drive.google.com/drive/folders/11bTDgvsog5V3u8NWgrAJKOUALQNSFI-o?usp=sharing
+python -m venv env
+env\Scripts\Activate
+pip install django
+django-admin startproject newProj . (newProj project name)
+python manage.py migrate
+python manage.py createsuperuser
+python manage.py startapp newApp
