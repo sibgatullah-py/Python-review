@@ -3,3 +3,6 @@
 
 str = 'this is a demo . this is another demo and demo for the third time.'
 print(str.replace('demo','text',2))# the first 2 demos will be replaced but the 3rd won't cause we said 2 demos will be replaced 
+
+str2 = 'This is our example'
+print(str2.replace('example','demo'))
