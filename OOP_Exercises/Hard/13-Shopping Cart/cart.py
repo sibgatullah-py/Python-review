@@ -5,8 +5,8 @@ class Cart:
     def __init__(self):
         self.cart = []
         
-    def add_product(self):
-        pass
+    def add_product(self,product):
+        self.cart.append(product)
     
     def remove_product(self):
         pass

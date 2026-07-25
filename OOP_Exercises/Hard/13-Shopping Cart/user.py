@@ -1,4 +1,5 @@
-from store import *
+from cart import Cart
+from store import Store
 from cart import *
 
 class User:
@@ -10,12 +11,14 @@ class User:
 
 # Admin Methods        
 class Admin(User):
-    def __init__(self,name,email,password):
-        super().__init__(name,email,password)
+    store = Store()
+    
+    def __init__(self,name,email):
+        super().__init__(name,email,password="admin123")
         self.role = 'admin'
         
-    def add_product(self,store,product):
-        store.add_product(product)
+    def add_product():
+        Admin.store.add_product()
     
     def edit_product(self,store,product_id):
         store.edit_product(product_id)
@@ -23,8 +26,8 @@ class Admin(User):
     def delete_product(self,store,product_id):
         store.delete_product(product_id)
     
-    def view_product(self,store):
-        store.list_product()
+    def view_product():
+        Admin.store.view_product()
         
     def search_product(self,store,product_id):
         store.search_product(product_id)
@@ -37,6 +40,9 @@ class Customer(User):
         super().__init__(name, email, password)
         self.role = 'customer'
         self.cart = Cart() # cart for every customer
+    
+    def view_store(self):
+        pass
         
     def view_cart(self):
         pass

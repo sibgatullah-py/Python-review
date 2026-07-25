@@ -35,11 +35,18 @@ class Store:
     
     def view_product(self):
         for product in self.products:
-            print(product)
+            print(f"{product.name} ---- {product.price}tk")
+            
+    def get_product(self,choice):
+        for product in self.products:
+            if choice == product.name:
+                # print(f"{product.id}\n{product.name}\n{product.price}\n{product.stock}")
+                return product
     
     def search_product(self,product_id):
         for product in self.products:
             if product_id == product.id:
-                print(product)
-                return
+                return product
+            
+        return None
         
