@@ -3,19 +3,18 @@ from user import *
        
         
 class Store:
-    def __init__(self):
-        self.products = []
+    products = []
         
         
-    def add_product(self):
+    def add_product():
         name = input("Product name: ")
         price = int(input("Product price: "))
         stock = int(input("Product stock: "))
         product = Product(name,price,stock)
-        self.products.append(product)
+        Store.products.append(product)
         
-    def edit_product(self,product_id):
-        for product in  self.products:
+    def edit_product(product_id):
+        for product in  Store.products:
             if product_id == product.id:
                 name = input("Product name: ")
                 price = int(input("New price: "))
@@ -26,25 +25,25 @@ class Store:
                 product.stock += stock
                 return
     
-    def delete_product(self,product_id):
-        for index,product in enumerate(self.products):
+    def delete_product(product_id):
+        for index,product in enumerate(Store.products):
             if product_id == product.id:
-                self.products.pop(index)
+                Store.products.pop(index)
                 print(f"ID {product_id} is removed")
                 return
     
-    def view_product(self):
-        for product in self.products:
-            print(f"{product.name} ---- {product.price}tk")
+    def view_product():
+        for product in Store.products:
+            print(f"{product.id} --- {product.name} --- {product.price}tk")
             
-    def get_product(self,choice):
-        for product in self.products:
+    def get_product(choice):
+        for product in Store.products:
             if choice == product.name:
                 # print(f"{product.id}\n{product.name}\n{product.price}\n{product.stock}")
                 return product
     
-    def search_product(self,product_id):
-        for product in self.products:
+    def search_product(product_id):
+        for product in Store.products:
             if product_id == product.id:
                 return product
             
