@@ -59,4 +59,4 @@ class Customer(User):
     def clear_cart(self):
         pass
     
-    
+  # extended  
