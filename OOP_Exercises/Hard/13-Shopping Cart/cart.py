@@ -13,10 +13,7 @@ class Cart:
     
     def show_cart(self):
         for product in self.cart:
-            print(product.id)
-            print(product.name)
-            print(product.amount)
-            print(product.price)
+            print(f"{product.id }\n{product.name }\n{product.amount }\n{product.price}")
             print()
     
     def total_price(self):
