@@ -41,7 +41,7 @@ class Customer(User):
         self.role = 'customer'
         self.cart = Cart() # cart for every customer
     
-    def view_store():
+    def view_store():# done
         Store.view_product()
         
     def view_cart(self): # User will be passed in this self 

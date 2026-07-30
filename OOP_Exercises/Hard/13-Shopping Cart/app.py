@@ -50,6 +50,7 @@ class App:
                     print("3. Search Product")
                     print("4. View All Products")
                     print("5. Delete Product")
+                    print("6. Go Back")
 
                     admin_choice = input("\n --> ")
 
@@ -82,6 +83,9 @@ class App:
                         Admin.delete_product(product_id)
                         input("\nPress Enter to continue...")
                         clear_screen()
+                    
+                    elif admin_choice == '6':
+                        self.rotation = False
 
                 else:
                     print("Invalid password!")
@@ -101,6 +105,9 @@ class App:
             while self.rotation:
                 print("Logged in as Customer")
                 print("\n1.View store\n2.View cart")
+                customer_choice = input("\n-->")
+                if customer_choice == '1':
+                    Customer.view_store()
             
             
             
