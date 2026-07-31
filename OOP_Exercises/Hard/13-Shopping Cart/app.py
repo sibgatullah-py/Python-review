@@ -103,27 +103,36 @@ class App:
             person = Customer(name,email,password)
             
             while self.rotation:
+                
                 print("Logged in as Customer")
                 print("\n1.View store\n2.View cart")
                 customer_choice = input("\n-->")
-                if customer_choice == '1':
-                    Customer.view_store()
-                    inside = input("\n1.Add product? ->")
+                
+                if customer_choice == '1':              
+                    
                     self.counter = True
+                    
                     while self.counter:
+                        
+                        Customer.view_store()
+                        inside = input("\n1.Add product? ->")
+                        
                         if inside == '1':
                             product_id = input("Product ID.. ")
+                            
+                            found = False
+                            
                             for product in Store.products:
+                                
                                 if product_id == product.id:
                                     Customer.add_product(product)
                                     print("Product added to cart")
-                                    break
-                                        
-                                else:
-                                    print("Product does not exists in store. ")
+                                    found = True
                                     self.counter = False
-                                    break      
-                                             
+                                
+                            if not found:
+                                print("Product does not exists in store. ")
+                                        
                         if inside == '2':
                             self.counter = False
                     
