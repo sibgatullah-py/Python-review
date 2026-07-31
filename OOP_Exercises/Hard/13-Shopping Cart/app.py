@@ -108,6 +108,25 @@ class App:
                 customer_choice = input("\n-->")
                 if customer_choice == '1':
                     Customer.view_store()
+                    inside = input("\n1.Add product? ->")
+                    self.counter = True
+                    while self.counter:
+                        if inside == '1':
+                            product_id = input("Product ID.. ")
+                            for product in Store.products:
+                                if product_id == product.id:
+                                    Customer.add_product(product)
+                                    print("Product added to cart")
+                                    break
+                                        
+                                else:
+                                    print("Product does not exists in store. ")
+                                    self.counter = False
+                                    break      
+                                             
+                        if inside == '2':
+                            self.counter = False
+                    
             
             
             

@@ -8,8 +8,15 @@ class Cart:
     def add_product(self,product):
         self.cart.append(product)
     
-    def remove_product(self):
-        pass
+    def remove_product(self,product_id):
+        for product in self.cart:
+            try:
+                if product_id == product.id:
+                    self.cart.remove(product)
+                    print("Product removed")
+                    break
+            except StopIteration:
+                print("Product does not exists")
     
     def show_cart(self):
         for product in self.cart:
