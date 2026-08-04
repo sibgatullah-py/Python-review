@@ -93,9 +93,7 @@ class App:
                     clear_screen()
                         
                 
-                
-                
-        
+                      
         if choice == '2':
             name = input("Enter customer name: ")
             email = input("Enter customer email: ")
@@ -105,7 +103,7 @@ class App:
             while self.rotation:
                 
                 print("Logged in as Customer")
-                print("\n1.View store\n2.View cart")
+                print("\n1.View store\n2.View cart\n3.Go Back")
                 customer_choice = input("\n-->")
                 
                 if customer_choice == '1':              
@@ -119,22 +117,31 @@ class App:
                         
                         if inside == '1':
                             product_id = input("Product ID.. ")
+                            amount = int(input("Amount: "))
                             
                             found = False
                             
                             for product in Store.products:
                                 
                                 if product_id == product.id:
-                                    Customer.add_product(product)
-                                    print("Product added to cart")
+                                    person.add_product(product)
+                                    print("\nProduct added to cart\n")
                                     found = True
                                     self.counter = False
+                                    break
                                 
                             if not found:
-                                print("Product does not exists in store. ")
+                                print("\nProduct does not exists in store.\n ")
                                         
                         if inside == '2':
                             self.counter = False
+                    
+                    
+                if customer_choice == '2':
+                    pass
+        
+                if customer_choice == '3':
+                    self.rotation = False
                     
             
             

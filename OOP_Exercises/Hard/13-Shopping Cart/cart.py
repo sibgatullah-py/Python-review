@@ -5,9 +5,16 @@ class Cart:
     def __init__(self):
         self.cart = []
         
-    def add_product(self,product):
-        self.cart.append(product)
+    def add_product(self,product,quantity):
+        self.cart.append({"product":product,
+                          "quantity": quantity})
     
+    def show_cart(self):
+        for product in self.cart:
+            print(f"{product.id }\n{product.name }\n{product.amount }\n{product.price}")
+            print()
+            
+    # methods called inside show cart logic        
     def remove_product(self,product_id):
         for product in self.cart:
             try:
@@ -17,11 +24,6 @@ class Cart:
                     break
             except StopIteration:
                 print("Product does not exists")
-    
-    def show_cart(self):
-        for product in self.cart:
-            print(f"{product.id }\n{product.name }\n{product.amount }\n{product.price}")
-            print()
     
     def total_price(self):
         pass
