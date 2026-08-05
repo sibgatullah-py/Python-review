@@ -93,56 +93,79 @@ class App:
                     clear_screen()
                         
                 
-                      
         if choice == '2':
+            clear_screen()
+
             name = input("Enter customer name: ")
             email = input("Enter customer email: ")
             password = input("Enter password: ")
             person = Customer(name,email,password)
-            
+
+            clear_screen()
+
             while self.rotation:
-                
+
                 print("Logged in as Customer")
                 print("\n1.View store\n2.View cart\n3.Go Back")
                 customer_choice = input("\n-->")
-                
-                if customer_choice == '1':              
-                    
+
+                clear_screen()
+
+                if customer_choice == '1':
+
                     self.counter = True
-                    
+
                     while self.counter:
-                        
+
                         Customer.view_store()
-                        inside = input("\n1.Add product? ->")
-                        
+
+                        inside = input("\n1.Add product\n2.Back\n--> ")
+
+                        clear_screen()
+
                         if inside == '1':
+                            Customer.view_store()
+                            print()
                             product_id = input("Product ID.. ")
                             amount = int(input("Amount: "))
-                            
+
                             found = False
-                            
+
                             for product in Store.products:
-                                
+
                                 if product_id == product.id:
-                                    person.add_product(product)
+                                    person.add_product(product, amount)
                                     print("\nProduct added to cart\n")
+
                                     found = True
                                     self.counter = False
+
+                                    input("Press Enter to continue...")
+                                    clear_screen()
+
                                     break
-                                
+
                             if not found:
-                                print("\nProduct does not exists in store.\n ")
-                                        
+                                print("\nProduct does not exist in store.\n")
+
+                                input("Press Enter to continue...")
+                                clear_screen()
+
                         if inside == '2':
+                            clear_screen()
                             self.counter = False
-                    
-                    
+
                 if customer_choice == '2':
-                    pass
-        
+                    clear_screen()
+
+                    person.view_cart()
+
+                    input("\nPress Enter to continue...")
+                    clear_screen()
+
                 if customer_choice == '3':
+                    clear_screen()
                     self.rotation = False
-                    
             
             
             

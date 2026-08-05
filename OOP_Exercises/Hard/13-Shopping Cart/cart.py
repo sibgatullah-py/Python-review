@@ -10,9 +10,14 @@ class Cart:
                           "quantity": quantity})
     
     def show_cart(self):
-        for product in self.cart:
-            print(f"{product.id }\n{product.name }\n{product.amount }\n{product.price}")
-            print()
+        for item in self.cart:
+            product = item["product"]
+            quantity = item["quantity"]
+            price = product.price*quantity
+
+            print(f"\nName: {product.name}")
+            print(f"Quantity: {quantity}")
+            print(f"Price: {price}")
             
     # methods called inside show cart logic        
     def remove_product(self,product_id):

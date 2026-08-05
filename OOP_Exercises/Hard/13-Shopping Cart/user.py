@@ -45,10 +45,10 @@ class Customer(User):
         Store.view_product()
         
     def view_cart(self): # User will be passed in this self 
-        self.cart.show_cart(self)
+        self.cart.show_cart()
     
-    def add_product(self,product):
-        self.cart.add_product(product)
+    def add_product(self,product,quantity):
+        self.cart.add_product(product,quantity)
     
     def remove_product(self):
         pass
