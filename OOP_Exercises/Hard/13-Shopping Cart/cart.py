@@ -30,8 +30,8 @@ class Cart:
             except StopIteration:
                 print("Product does not exists")
     
-    def total_price(self):
+    def increase_product(self):
         pass
     
     def clear_cart(self):
-        pass
+        self.cart.clear()
