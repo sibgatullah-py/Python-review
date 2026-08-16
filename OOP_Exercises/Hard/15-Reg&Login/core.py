@@ -1,3 +1,6 @@
- #turn the inputs into json and put them in json file . 
- # Need serializers
- 
+import json
+import os
+
+class DatabaseManager:
+    def __init__(self,filename = "database.json"):
+        self.filename = filename
